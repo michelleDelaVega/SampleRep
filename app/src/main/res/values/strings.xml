@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">SampleRep</string>
+
+    <!-- Log in flds-->
+    <string name="strLogin">Log in</string>
+
+    <!-- Log in | Sign up-->
+    <string name="strEmail">Email: </string>
+    <string name="strPassword">Password: </string>
+
+    <!-- Sign up -->
+    <string name="strSignup">Sign Up </string>
+    <string name="strFName">First Name: </string>
+    <string name="strLName">Last Name: </string>
+    <string name="strMName">Middle Name: </string>
+    <string name="strPhone">Phone: </string>
+    <string name="strConfirmPassword">Confirm Password: </string>
+
+    <!-- Dashboard (User mode)-->
+    <string name="strDashboard">Dashboard</string>
+    <string name="strMenu">Menu</string>
+    <string name="strCart">Cart</string>
+    <string name="strProfile">Profile</string>
+
+    <!-- Buttons -->
+    <string name="strRegister">Register</string>
+    <string name="strEnter">Enter</string>
+    <string name="strClear">Clear</string>
+    <string name="strAdd">Add</string>
+    <string name="strInsert">Insert</string>
+    <string name="strEdit">Edit</string>
+    <string name="strUpdate">Update</string>
+    <string name="strDelete">Delete</string>
+    <string name="strRemove">Remove</string>
+    <string name="strBack">Back</string>
+
+
+
+
+
+</resources>
