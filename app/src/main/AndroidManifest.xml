@@ -16,8 +16,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".SplashScreen">
+
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".SignupActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".loginActivity">
+
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".Main2Activity">
+
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".OrderHistory" />
+        <activity android:name=".ProductsActivity"></activity>
     </application>
 
 </manifest>

@@ -21,6 +21,14 @@
     <string name="strMenu">Menu</string>
     <string name="strCart">Cart</string>
     <string name="strProfile">Profile</string>
+    <string name="strOrderHistory">Order History</string>
+    <string name="strOrder">Order</string>
+
+    <!-- Fields (Profile) -->
+    <string name="strEditProfile">Edit Profile</string>
+    <string name="strName">Name: </string>
+    <string name="strEditInfo">Edit Information</string>
+    <string name="strSave">Save</string>
 
     <!-- Buttons -->
     <string name="strRegister">Register</string>
@@ -33,9 +41,7 @@
     <string name="strDelete">Delete</string>
     <string name="strRemove">Remove</string>
     <string name="strBack">Back</string>
-
-
-
-
+    <string name="strCancel">Cancel</string>
+    <string name="strLogout">Logout</string>
 
 </resources>
