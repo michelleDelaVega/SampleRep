@@ -1,5 +1,6 @@
 package com.example.michelleclarisse.samplerep;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,66 +20,82 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class loginActivity extends AppCompatActivity {
-    EditText txtEmail, txtPassword;
+    EditText loginEmail, loginPassword;
     FirebaseAuth mAuth;
-    Button login;
+    Button loginBtn;
+    ProgressBar loginProgressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        txtPassword = (EditText) findViewById(R.id.txtpassword);
-        txtEmail = (EditText) findViewById(R.id.txtemail);
-        login = (Button) findViewById(R.id.btnLogin);
+        loginPassword = (EditText) findViewById(R.id.txtpassword);
+        loginEmail = (EditText) findViewById(R.id.txtemail);
+        loginBtn = (Button) findViewById(R.id.btnLogin);
+        loginProgressBar = (ProgressBar) findViewById(R.id.login_progressBar);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //loginProgressBar.setVisibility(View.VISIBLE);
                 loginNow();
             }
         });
     }//end of onCreate
 
     public void loginNow() {
-        final String email = txtEmail.getText().toString();
-        final String password = txtPassword.getText().toString();
+        final String emailForlogin = loginEmail.getText().toString();
+        final String passwordForlogin = loginPassword.getText().toString();
 
-        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-            txtPassword.setError("Must be more than 6 characters.");
-            txtEmail.setError("");
+        if(TextUtils.isEmpty(emailForlogin) || TextUtils.isEmpty(passwordForlogin)) {
+            loginPassword.setError("Must be more than 6 characters.");
+            loginEmail.setError("");
             Toast.makeText(loginActivity.this, "Enter necessary fields.", Toast.LENGTH_SHORT).show();
         } else {
+            loginProgressBar.setVisibility(View.VISIBLE);
             //authenticate user
-            mAuth.signInWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(emailForlogin, passwordForlogin)
                     .addOnCompleteListener(loginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                if (password.length() < 6) {
-                                    txtPassword.setError("Must be more than 6 characters.");
+                            if (!task.isSuccessful()) {     //error
+                                if (passwordForlogin.length() < 6) {
+                                    loginPassword.setError("Must be more than 6 characters.");
                                 } else {
                                     Toast.makeText(loginActivity.this, "Try again", Toast.LENGTH_LONG).show();
                                 }
                                 Log.e("ANONE_ANONE: ", "Authentication failed!");
-                            } else {
+                            } else {                        //successful login
+                                sendToHome();
+                                /*
                                 FirebaseUser user = mAuth.getCurrentUser();
+
                                 Intent intent = new Intent(loginActivity.this, Main2Activity.class);
+
                                 intent.putExtra("keyEmail",user.getEmail().toString());
-                                intent.putExtra("keyPassword",txtPassword.getText().toString());
+                                intent.putExtra("keyPassword",loginPassword.getText().toString());
                                 startActivity(intent);
                                 finish();
+                                */
                             }
+                            loginProgressBar.setVisibility(View.INVISIBLE);
                         }
                     });
         }
     }//end of loginNow()
-    /*@Override
+    @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }*/
+        if(currentUser!=null) {
+            sendToHome();
+        }
+        }//end of onStart
 
+    private void sendToHome() {
+        startActivity(new Intent(loginActivity.this, Main2Activity.class));
+        finish();
+    }
 
 }

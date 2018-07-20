@@ -16,9 +16,18 @@
         android:layout_weight="2"
         android:orientation="vertical">
 
+        <ProgressBar
+            android:id="@+id/login_progressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="182dp"
+            android:layout_height="105dp"
             android:layout_weight="1" />
 
         <EditText

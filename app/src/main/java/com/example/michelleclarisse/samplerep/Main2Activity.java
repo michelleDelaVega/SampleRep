@@ -51,7 +51,7 @@ public class Main2Activity extends AppCompatActivity {
                 }
             }
         };
-
+/*
         Bundle b = getIntent().getExtras();
         String keyEmail = b.getString("keyEmail");
         String keyPassword = b.getString("keyPassword");
@@ -65,7 +65,7 @@ public class Main2Activity extends AppCompatActivity {
                         } else {    currentUI();       }
                     }
                 });
-        logout.setOnClickListener(new View.OnClickListener() {
+ */       logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
