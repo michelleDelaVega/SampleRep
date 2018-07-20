@@ -1,242 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/nav_header_vertical_spacing"
     tools:context=".SignupActivity">
 
 
-    <TableRow
+    <ProgressBar
+        android:id="@+id/register_ProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="128dp">
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="96dp" />
-
-        <TextView
-            android:id="@+id/lblTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create an Account" />
-
-    </TableRow>
-
-    <TableRow
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="11dp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblFname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strFName" />
-
-        <EditText
-            android:id="@+id/txtFName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-
-    </TableRow>
-
-    <TableRow
+    <TextView
+        android:id="@+id/lblTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="30sp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblLname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strLName" />
-
-        <EditText
-            android:id="@+id/txtLName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </TableRow>
-
-    <TableRow
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="5dp"
+        tools:layout_width="wrap_content">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/lblMname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strMName" />
+            <TextView
+                android:id="@+id/lblFname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strFName" />
 
-        <EditText
-            android:id="@+id/txtMName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/txtRegFName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        </TableRow>
 
-    </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TableRow
+            <TextView
+                android:id="@+id/lblLname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strLName" />
+
+            <EditText
+                android:id="@+id/txtRegLName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblMname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strMName" />
+
+            <EditText
+                android:id="@+id/txtRegMName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strPhone" />
+
+            <EditText
+                android:id="@+id/txtRegPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="number|phone" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strEmail" />
+
+            <EditText
+                android:id="@+id/txtRegEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblPassword"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strPassword" />
+
+            <EditText
+                android:id="@+id/txtRegPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblCPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/strConfirmPassword" />
+
+            <EditText
+                android:id="@+id/txtRegConfirmPassword"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strPhone" />
-
-        <EditText
-            android:id="@+id/txtPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number|phone" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strEmail" />
-
-        <EditText
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strPassword" />
-
-        <EditText
-            android:id="@+id/txtPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/lblCPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strConfirmPassword" />
-
-        <EditText
-            android:id="@+id/txtConfirmPassword"
-            android:layout_width="148dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-        <Space
-            android:layout_width="50dp"
-            android:layout_height="match_parent" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <Space
-            android:layout_width="23dp"
-            android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/strClear" />
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/strRegister" />
+
         <Button
-            android:id="@+id/btnBack"
+            android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strBack" />
+            android:layout_weight="1"
+            android:text="@string/strCancel" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
+    </LinearLayout>
 
-</TableLayout>
+</LinearLayout>

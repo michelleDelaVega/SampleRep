@@ -21,6 +21,14 @@
     <string name="strMenu">Menu</string>
     <string name="strCart">Cart</string>
     <string name="strProfile">Profile</string>
+    <string name="strOrderHistory">Order History</string>
+    <string name="strOrder">Order</string>
+
+    <!-- Fields (Profile) -->
+    <string name="strEditProfile">Edit Profile</string>
+    <string name="strName">Name: </string>
+    <string name="strEditInfo">Edit Information</string>
+    <string name="strSave">Save</string>
 
     <!-- Buttons -->
     <string name="strRegister">Register</string>
@@ -33,9 +41,14 @@
     <string name="strDelete">Delete</string>
     <string name="strRemove">Remove</string>
     <string name="strBack">Back</string>
-
-
-
-
-
+    <string name="strCancel">Cancel</string>
+    <string name="strLogout">Logout</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Dashboard</string>
+    <string name="nav_header_subtitle">Username</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behavior</string>
 </resources>
