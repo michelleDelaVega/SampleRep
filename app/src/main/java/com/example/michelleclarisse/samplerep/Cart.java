@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.michelleclarisse.samplerep.Common.Common;
 import com.example.michelleclarisse.samplerep.Database.Database;
 import com.example.michelleclarisse.samplerep.Model.Order;
 import com.example.michelleclarisse.samplerep.Model.Requests;
 import com.example.michelleclarisse.samplerep.ViewHolder.CartAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -33,7 +35,7 @@ public class Cart extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference tbl_verified;
-
+    FirebaseAuth mAuth;
     TextView txtTotalPrice;
     Button btnPlace;
 
@@ -44,6 +46,7 @@ public class Cart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         tbl_verified = database.getReference("Verified");
         //Init
@@ -78,17 +81,35 @@ public class Cart extends AppCompatActivity {
             alertDialog.setView(edtAddress); // Add edit Text to Alert Dialog
             alertDialog.setIcon(R.drawable.ic_shopping_cart_black_24dp);
 
-            alertDialog.setPositiveButton("YES",new DialogInterface.OnClickListener(){
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Requests request = new Requests(
+            alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Requests request = new Requests(
                             Common.currentUser.getPhone(),
                             Common.currentUser.fullName(),
                             edtAddress.getText().toString(),
                             txtTotalPrice.getText().toString(),
                             cart
                     );
-                }
+
+                    tbl_verified.child(mAuth.getUid()).child(String.valueOf(System.currentTimeMillis()))
+                            .setValue(request);
+                    //Delete cart
+                    new Database(getBaseContext()).cleanCart();
+                    Toast.makeText(Cart.this, "Thank You , Order Placed", Toast.LENGTH_SHORT).show();
+                    finish();
+                        }
             });
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+    });
+            alertDialog.show();
+
+
+
     }//end of showDialog()
     private void loadListFood(){
         cart = new Database(this).getCarts();
