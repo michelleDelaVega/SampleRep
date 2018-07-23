@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.michelleclarisse.samplerep.Database.Database;
+import com.example.michelleclarisse.samplerep.Model.Order;
 import com.example.michelleclarisse.samplerep.Model.Products;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,7 +46,7 @@ public class ProductInfoActivity extends AppCompatActivity {
     DatabaseReference tbl_products, tbl_orders;
 
     FirebaseAuth mAuth;
-
+Products products = new Products();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,9 +76,13 @@ public class ProductInfoActivity extends AppCompatActivity {
 
         cart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                showAlertDialog();
-            }
-        });//end of onClick()
+                new Database(getBaseContext()).addToCart(new Order(
+                        ProdId,prodName.getText().toString(),qty.getNumber(),prodPrice.getText().toString(),prodDiscount.getText().toString()
+                        ));
+                Log.e("PRODID is ","_"+ProdId+"_");
+            showAlertDialog();
+            }//end of onClick()
+        });
     }//end of onCreate()
 
     private void addToCart() {

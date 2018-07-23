@@ -2,22 +2,30 @@ package com.example.michelleclarisse.samplerep.Model;
 
 public class Order {
 
+    private String ProdId;
     private String ProdDiscount;
     private String ProdName;
     private String ProdPrice;
     private String ProdQty;
-    private String ProdSubtotal;
 
     public Order() {
 
     }
 
-    public Order(String prodDiscount, String prodName, String prodPrice, String prodQty, String prodSubtotal) {
-        ProdDiscount = prodDiscount;
+    public Order(String prodId, String prodName, String prodQty, String prodPrice, String prodDiscount ) {
+        ProdId = prodId;
         ProdName = prodName;
-        ProdPrice = prodPrice;
         ProdQty = prodQty;
-        ProdSubtotal = prodSubtotal;
+        ProdPrice = prodPrice;
+        ProdDiscount = prodDiscount;
+    }
+
+    public String getProdId() {
+        return ProdId;
+    }
+
+    public void setProdId(String prodId) {
+        ProdId = prodId;
     }
 
     public String getProdDiscount() {
@@ -50,13 +58,5 @@ public class Order {
 
     public void setProdQty(String prodQty) {
         ProdQty = prodQty;
-    }
-
-    public String getProdSubtotal() {
-        return ProdSubtotal;
-    }
-
-    public void setProdSubtotal(String prodSubtotal) {
-        ProdSubtotal = prodSubtotal;
     }
 }
