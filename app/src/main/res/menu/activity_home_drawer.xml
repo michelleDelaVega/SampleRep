@@ -7,36 +7,32 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person_black_24dp"
-            android:title="Account" />
-        <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/ic_restaurant_menu_black_24dp"
-            android:title="Menu" />
-        <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
-            android:title="Cart" />
+            android:title="@string/profile" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_history_black_24dp"
-            android:title="Order History" />
+            android:title="@string/history" />
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_restaurant_menu_black_24dp"
+            android:title="@string/order" />
         <item
             android:id="@+id/nav_signout"
             android:icon="@drawable/ic_exit_to_app_black_24dp"
-            android:title="Sign out" />
+            android:title="@string/sign_out" />
     </group>
-<!-- ADMIN MODE
+
     <item android:title="Management">
         <menu>
             <item
-                android:id="@+id/nav_userManager"
-                android:icon="@drawable/ic_group_black_24dp"
+                android:id="@+id/nav_users"
+                android:icon="@drawable/ic_people_black_24dp"
                 android:title="Users" />
             <item
-                android:id="@+id/nav_productManager"
+                android:id="@+id/nav_menu"
                 android:icon="@drawable/ic_room_service_black_24dp"
-                android:title="Products" />
+                android:title="Menu" />
         </menu>
     </item>
--->
+
 </menu>

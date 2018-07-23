@@ -3,32 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_splash_screen"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     tools:context=".loginActivity">
 
-    <Space
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/login_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="224dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
-        <ProgressBar
-            android:id="@+id/login_progressBar"
-            style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:indeterminate="true"
-            android:visibility="invisible" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:layout_weight="1" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <EditText
             android:id="@+id/txtemail"
@@ -36,8 +34,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:fontFamily="@font/couture_bld"
+            android:foregroundTint="@color/white"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/krispy_kreme_red"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtpassword"
@@ -45,11 +48,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:fontFamily="@font/couture_bld"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/krispy_kreme_red"
+            android:textSize="20sp" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="57dp"
             android:layout_weight="1" />
 
@@ -57,14 +64,16 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/strLogin" />
+            android:background="@color/krispy_kreme_green"
+            android:fontFamily="@font/couture_bld"
+            android:shadowColor="@color/overlayBackground"
+            android:shadowRadius="90"
+            android:text="@string/strLogin"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:transformPivotX="90dp" />
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
 
 </LinearLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProductInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/prodInfo_image"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_collapseMode="parallax"
+            app:srcCompat="@drawable/login_page" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:id="@+id/spacer"/>
+</LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/ic_shopping_cart_black_24dp"
+        app:elevation="10dp"
+        app:layout_anchor="@id/prodInfo_image"
+        app:layout_anchorGravity="bottom|right"
+        app:useCompatPadding="true" />
+
+    <LinearLayout
+        android:id="@+id/prodInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_anchor="@id/spacer"
+        app:layout_anchorGravity="bottom">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/prodInfo_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/couture_bld"
+                    android:padding="12dp"
+                    android:text="@string/str_product_name"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/layout_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/peso_sign"
+                        android:tint="@color/krispy_kreme_green" />
+
+                    <TextView
+                        android:id="@+id/prodInfo_price"
+                        android:layout_width="89dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/couture_bld"
+                        android:padding="12dp"
+                        android:text="100"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/prodInfo_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/couture_bld"
+                        android:padding="12dp"
+                        android:text=" "
+                        android:textColor="@color/krispy_kreme_red"
+                        android:textSize="1sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/number_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        app:backGroundColor="@color/colorAccent"
+                        app:finalNumber="20"
+                        app:initialNumber="1"
+                        app:textSize="10sp">
+
+                    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/prodInfo_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/couture_bld"
+                    android:padding="12dp"
+                    android:text="Description"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

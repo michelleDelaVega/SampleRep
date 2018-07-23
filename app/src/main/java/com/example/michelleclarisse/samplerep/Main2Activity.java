@@ -11,18 +11,26 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.michelleclarisse.samplerep.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Main2Activity extends AppCompatActivity {
     TextView lname, lpass, lemail, luid;
     Button logout;
-    FirebaseAuth.AuthStateListener authListener;
     FirebaseAuth mAuth;
-
+    FirebaseUser firebaseUser;
+    FirebaseDatabase database;
+    DatabaseReference tbl_users;
+    FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,60 +44,54 @@ public class Main2Activity extends AppCompatActivity {
         lemail = (TextView) findViewById(R.id.lblEmail);
 
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        tbl_users = database.getReference("");
+        firebaseUser = mAuth.getCurrentUser();
+        String userID = firebaseUser.getUid();
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        authListener = new FirebaseAuth.AuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(Main2Activity.this, loginActivity.class));
-                    finish();
-                }
+
             }
         };
-/*
-        Bundle b = getIntent().getExtras();
-        String keyEmail = b.getString("keyEmail");
-        String keyPassword = b.getString("keyPassword");
+/*tbl_users.addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        showDataSnapshot(dataSnapshot);
+    }
 
-        mAuth.signInWithEmailAndPassword(keyEmail, keyPassword)
-                .addOnCompleteListener(Main2Activity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.e("ANONE_ANONE: ", "Authentication failed!");
-                        } else {    currentUI();       }
-                    }
-                });
- */       logout.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
+});*/
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signOut();
+                logOut();
             }
         });
     }//end of onCreate
-    public void currentUI(){
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        luid.setText(currentUser.getUid());
-        lemail.setText(currentUser.getEmail());
-        Log.d("UID",""+currentUser.getUid());
-        Log.d("Email", ""+currentUser.getEmail());
+
+    private void showDataSnapshot(DataSnapshot dataSnapshot) {
+    for(DataSnapshot ds: dataSnapshot.getChildren()){
+        User uinfo = new User();
+        uinfo.setEmail(ds.child(firebaseUser.getUid()).getValue(User.class).getEmail());
+        lemail.setText(uinfo.getEmail());
+    }
+    }
+
+    private void logOut() {
+        mAuth.signOut();
+        sendToLogin();
+    }
+    private void sendToLogin() {
+        startActivity(new Intent(Main2Activity.this, MainActivity.class));
+        finish();
     }
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (authListener != null) {
-            mAuth.removeAuthStateListener(authListener);
-        }
     }
 }

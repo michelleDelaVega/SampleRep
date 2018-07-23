@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/side_nav_bar"
+    android:background="@drawable/polka_banner"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -14,25 +14,35 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="349dp"
-        android:layout_height="76dp"
+        android:layout_width="66dp"
+        android:layout_height="73dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+        app:srcCompat="@drawable/profile_pic" />
 
     <TextView
-        android:id="@+id/lblDashboard"
+        android:id="@+id/lblNavUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:padding="8dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        android:text="@string/strName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/krispy_kreme_green"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/lblFullName"
-        android:layout_width="wrap_content"
+        android:id="@+id/lblNavEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:text="@string/strEmail"
+        android:textColor="@color/krispy_kreme_red"
+        android:textStyle="bold" />
 
 </LinearLayout>

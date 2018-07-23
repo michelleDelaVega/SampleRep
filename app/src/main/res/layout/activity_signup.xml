@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/ic_splash_screen"
     android:padding="@dimen/nav_header_vertical_spacing"
     tools:context=".SignupActivity">
 
@@ -24,27 +25,37 @@
         android:id="@+id/lblTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create an Account"
+        android:background="@color/overlay_background_white"
+        android:fontFamily="@font/couture_bld"
+        android:paddingTop="10dp"
+        android:text="@string/str_create_an_account"
+        android:textAlignment="center"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="30sp" />
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:background="@color/overlay_background_white"
         android:gravity="center_vertical|center_horizontal"
         android:padding="5dp"
         tools:layout_width="wrap_content">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblFname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/strFName" />
+                android:text="@string/strFName"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegFName"
@@ -58,13 +69,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblLname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/strLName" />
+                android:text="@string/strLName"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegLName"
@@ -78,13 +91,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblMname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/strMName" />
+                android:text="@string/strMName"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegMName"
@@ -98,13 +113,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/strPhone" />
+                android:text="@string/strPhone"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegPhone"
@@ -118,13 +135,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/strEmail" />
+                android:text="@string/strEmail"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegEmail"
@@ -138,13 +157,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblPassword"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strPassword" />
+                android:text="@string/strPassword"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegPassword"
@@ -158,18 +179,20 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/lblCPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/strConfirmPassword" />
+                android:text="@string/strConfirmPassword"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/txtRegConfirmPassword"
-                android:layout_width="148dp"
+                android:layout_width="228dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
@@ -189,21 +212,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/strClear" />
+            android:background="@color/krispy_kreme_red"
+            android:text="@string/strClear"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/strRegister" />
-
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/strCancel" />
+            android:background="@color/krispy_kreme_green"
+            android:text="@string/strRegister"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

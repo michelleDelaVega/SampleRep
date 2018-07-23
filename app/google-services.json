@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "279152565550-rqakge862t392glpsib7ef1laqsui1q1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.michelleclarisse.samplerep",
+            "certificate_hash": "defa3aac2e9357a3f76f9d263e732fdf37d7ad0e"
+          }
+        },
+        {
           "client_id": "279152565550-l8g3e03ttaog8gj9caj7mob3imjk6pf6.apps.googleusercontent.com",
           "client_type": 3
         }

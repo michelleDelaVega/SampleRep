@@ -1,7 +1,9 @@
 package com.example.michelleclarisse.samplerep;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.michelleclarisse.samplerep.Common.Common;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -56,7 +59,6 @@ public class SignupActivity extends AppCompatActivity {
         confirmPassword = (EditText) findViewById(R.id.txtRegConfirmPassword);
 
         clear = (Button) findViewById(R.id.btnClear);
-        cancel = (Button) findViewById(R.id.btnCancel);
         register = (Button) findViewById(R.id.btnRegister);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +86,7 @@ public class SignupActivity extends AppCompatActivity {
                                         Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(), Toast.LENGTH_SHORT).show();
                                      } else {
                                             saveToFirebase();
-                                            sendToHome();
+                                            sendToMain();
                                      }
                                      registerProgressBar.setVisibility(View.INVISIBLE);
                                         }
@@ -107,13 +109,12 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-    cancel.setOnClickListener(new View.OnClickListener(){
-        @Override
-        public void onClick(View view) {
-            startActivity(new Intent(SignupActivity.this,MainActivity.class));  finish();
-        }});
     }//end of onCreate
     public void saveToFirebase(){
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        String uid = currentUser.getUid();
         String fn = fName.getText().toString().trim();
         String ln = lName.getText().toString().trim();
         String mn = mName.getText().toString().trim();
@@ -122,10 +123,11 @@ public class SignupActivity extends AppCompatActivity {
         String pw = password.getText().toString().trim();
         counter =+1 ;
 
+        Log.d("UID : ",""+uid);
         HashMap<String, String> dataMap = new HashMap<String, String>();
 
-        dataMap.put("First Name",fn);   dataMap.put("Last Name",ln);    dataMap.put("Middle Name",mn);
-        dataMap.put("Email",em);        dataMap.put("Password",pw);     dataMap.put("phone",pn);
+        dataMap.put("FName",fn);   dataMap.put("LName",ln);    dataMap.put("MName",mn);
+        dataMap.put("Email",em);        dataMap.put("Password",pw);     dataMap.put("Phone",pn);
 
         Set set = dataMap.entrySet();
         Iterator iterator = set.iterator();
@@ -134,7 +136,8 @@ public class SignupActivity extends AppCompatActivity {
             Log.d("Key: ",""+mentry.getKey()+" | Value: "+mentry.getValue() );
         }
         Log.d("Counter: ",""+counter);
-        database.child("Users").push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        database.child("Users").child(uid).setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
@@ -149,12 +152,12 @@ public class SignupActivity extends AppCompatActivity {
         public void onStart() {
             super.onStart();
             FirebaseUser currentUser = mAuth.getCurrentUser();
-            if(currentUser!=null){
+            mAuth.signOut();
+         if(currentUser!=null){
                 sendToHome();
-            }
-            else{
+            }/* else {
                 sendToMain();
-            }
+            }*/
         }
 
     private void sendToHome() {
@@ -165,6 +168,21 @@ public class SignupActivity extends AppCompatActivity {
     private void sendToMain() {
         startActivity(new Intent(SignupActivity.this, MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Sign down?")
+                .setMessage("Are you sure you want to go back?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        SignupActivity.super.onBackPressed();
+                    }
+                }).create().show();
+        sendToMain();
     }
 }//done!
 

@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.michelleclarisse.samplerep">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/krispy_kreme_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/krispy_kreme_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
 
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
+
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen"
-            android:screenOrientation="portrait">
-
-            <!--
-                        <intent-filter>
-                            <action android:name="android.intent.action.MAIN" />
-
-                            <category android:name="android.intent.category.LAUNCHER" />
-                        </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".SignupActivity"
+        <activity
+            android:name=".SignupActivity"
             android:screenOrientation="portrait">
 
             <!--
@@ -41,7 +47,8 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".loginActivity"
+        <activity
+            android:name=".loginActivity"
             android:screenOrientation="portrait">
 
             <!--
@@ -52,8 +59,10 @@
                         </intent-filter>
             -->
         </activity>
-        <activity android:name=".Main2Activity"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".Main2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
 
             <!--
                         <intent-filter>
@@ -63,12 +72,21 @@
                         </intent-filter>
             -->
         </activity>
-        <activity android:name=".OrderHistory" android:screenOrientation="portrait"/>
-        <activity android:name=".ProductsActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ProductsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ProductListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ProductInfoActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Cart"></activity>
     </application>
 
 </manifest>
