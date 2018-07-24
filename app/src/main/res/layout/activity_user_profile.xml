@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".UserProfile">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/layout_ProfileInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -20,11 +24,25 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="9"
                 android:orientation="vertical"
                 android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingBottom="0dp"
+                    android:text="Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/profileName"
@@ -47,7 +65,8 @@
                     android:fontFamily="@font/couture_bld"
                     android:gravity="center_vertical|start"
                     android:paddingBottom="10dp"
-                    android:text="100,000"
+                    android:paddingLeft="10dp"
+                    android:text="Michelle Dela Vega"
                     android:textAllCaps="true"
                     android:textColor="@color/krispy_kreme_red"
                     android:textStyle="italic" />
@@ -72,7 +91,8 @@
                     android:fontFamily="@font/couture_bld"
                     android:gravity="center_vertical|start"
                     android:paddingBottom="10dp"
-                    android:text="100,000"
+                    android:paddingLeft="10dp"
+                    android:text="09161234569"
                     android:textAllCaps="true"
                     android:textColor="@color/krispy_kreme_red"
                     android:textStyle="italic" />
@@ -97,10 +117,11 @@
                     android:fontFamily="@font/couture_bld"
                     android:gravity="center_vertical|start"
                     android:paddingBottom="10dp"
-                    android:text="100,000"
-                    android:textAllCaps="true"
+                    android:paddingLeft="10dp"
+                    android:text="abcd@gmail.com"
+                    android:textAllCaps="false"
                     android:textColor="@color/krispy_kreme_red"
-                    android:textStyle="italic" />
+                    android:textStyle="bold|italic" />
 
                 <TextView
                     android:id="@+id/profilePassword"
@@ -122,64 +143,38 @@
                     android:fontFamily="@font/couture_bld"
                     android:gravity="center_vertical|start"
                     android:paddingBottom="10dp"
-                    android:text="100,000"
+                    android:paddingLeft="10dp"
+                    android:text="********"
                     android:textAllCaps="true"
                     android:textColor="@color/krispy_kreme_red"
-                    android:textStyle="italic" />
+                    android:textStyle="bold|italic" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="9"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editText4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/editText8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/editText6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/editText7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
             </LinearLayout>
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/ic_edit_black_24dp"
+        android:tint="@color/krispy_kreme_green"
+        app:backgroundTint="@android:color/darker_gray"
+        app:elevation="10dp"
+        app:layout_anchor="@id/layout_ProfileInfo"
+        app:layout_anchorGravity="bottom|right"
+        app:useCompatPadding="true" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/layout_EditInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:visibility="invisible"
         app:cardElevation="4dp">
 
         <LinearLayout
@@ -191,44 +186,124 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="9"
                 android:orientation="vertical"
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/profileConfirmPassword"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/couture_bld"
                     android:gravity="center_vertical|start"
-                    android:paddingTop="10dp"
-                    android:text="Confirm Password"
-                    android:textAllCaps="true"
+                    android:paddingBottom="0dp"
+                    android:text="Edit Information"
+                    android:textAllCaps="false"
                     android:textColor="@color/krispy_kreme_green"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editFName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="@font/couture_bld"
+                        android:hint="First"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/krispy_kreme_red"
+                        android:textColorHint="@color/krispy_kreme_green"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/editMName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="@font/couture_bld"
+                        android:hint="Middle"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/krispy_kreme_red"
+                        android:textColorHint="@color/krispy_kreme_green"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/editLName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="@font/couture_bld"
+                        android:hint="Last Name"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/krispy_kreme_red"
+                        android:textColorHint="@color/krispy_kreme_green"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
                 <EditText
-                    android:id="@+id/infoConfirmPassword"
+                    android:id="@+id/editPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/couture_bld"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textColorHint="@color/krispy_kreme_green"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/couture_bld"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textColorHint="@color/krispy_kreme_green"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/couture_bld"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:textColor="@color/krispy_kreme_red"
-                    android:textSize="18sp" />
+                    android:textColorHint="@color/krispy_kreme_green"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/couture_bld"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textColorHint="@color/krispy_kreme_green"
+                    android:textSize="14sp" />
+
             </LinearLayout>
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
