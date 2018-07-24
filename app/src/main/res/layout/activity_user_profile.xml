@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingTop="10dp"
+                    android:text="Full Name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/infoFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingBottom="10dp"
+                    android:text="100,000"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/profilePhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:text="Phone number"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/infoPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingBottom="10dp"
+                    android:text="100,000"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:text="Email address"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/infoEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingBottom="10dp"
+                    android:text="100,000"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/profilePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:text="Password"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/infoPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingBottom="10dp"
+                    android:text="100,000"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/profileConfirmPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/couture_bld"
+                    android:gravity="center_vertical|start"
+                    android:paddingTop="10dp"
+                    android:text="Confirm Password"
+                    android:textAllCaps="true"
+                    android:textColor="@color/krispy_kreme_green"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/infoConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/couture_bld"
+                    android:inputType="textPassword"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+</LinearLayout>
