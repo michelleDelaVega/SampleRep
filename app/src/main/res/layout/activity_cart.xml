@@ -46,7 +46,7 @@
 
                 <TextView
                     android:id="@+id/total"
-                    android:layout_width="237dp"
+                    android:layout_width="238dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:fontFamily="@font/couture_bld"
