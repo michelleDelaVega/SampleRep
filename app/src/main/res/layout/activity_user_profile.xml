@@ -67,7 +67,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:text="Michelle Dela Vega"
-                    android:textAllCaps="true"
+                    android:textAllCaps="false"
                     android:textColor="@color/krispy_kreme_red"
                     android:textStyle="italic" />
 
@@ -93,7 +93,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:text="09161234569"
-                    android:textAllCaps="true"
+                    android:textAllCaps="false"
                     android:textColor="@color/krispy_kreme_red"
                     android:textStyle="italic" />
 
@@ -121,7 +121,7 @@
                     android:text="abcd@gmail.com"
                     android:textAllCaps="false"
                     android:textColor="@color/krispy_kreme_red"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/profilePassword"
@@ -282,7 +282,19 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/couture_bld"
-                    android:hint="Password"
+                    android:hint="Old Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/krispy_kreme_red"
+                    android:textColorHint="@color/krispy_kreme_green"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editNewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/couture_bld"
+                    android:hint="New Password"
                     android:inputType="textPassword"
                     android:textColor="@color/krispy_kreme_red"
                     android:textColorHint="@color/krispy_kreme_green"
@@ -305,5 +317,19 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSaveProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/white"
+        android:tint="@color/krispy_kreme_green"
+        android:visibility="invisible"
+        app:backgroundTint="@android:color/darker_gray"
+        app:elevation="10dp"
+        app:layout_anchor="@id/layout_EditInfo"
+        app:layout_anchorGravity="bottom|right"
+        app:useCompatPadding="true" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -171,16 +171,7 @@ public class Home extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_signout) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Sign out?")
-                    .setMessage("Are you sure you want to sign out?")
-                    .setNegativeButton(android.R.string.no, null)
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            logOut();
-                        }
-                    }).create().show();
+            logOut();
             return true;
         }
 
@@ -193,7 +184,7 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            userProfile();
         } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_order) {
@@ -210,9 +201,24 @@ public class Home extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void userProfile() {
+        startActivity(new Intent(Home.this, UserProfile.class));
+        finish();
+    }
+
     private void logOut() {
-        mAuth.signOut();
-        sendToLogin();
+        new AlertDialog.Builder(this)
+                .setTitle("Sign out?")
+                .setMessage("Are you sure you want to sign out?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        mAuth.signOut();
+                        sendToLogin();
+                    }
+                }).create().show();
     }
     private void sendToLogin() {
         startActivity(new Intent(Home.this, MainActivity.class));

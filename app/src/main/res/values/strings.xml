@@ -65,4 +65,5 @@
     <string name="str_product_name">Product Name</string>
     <string name="strTotal">Total:</string>
     <string name="str_place_order">Place Order</string>
+    <string name="title_activity_user_info">UserInfo</string>
 </resources>
